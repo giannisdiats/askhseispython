@@ -1,0 +1,317 @@
+'''Θέμα 2
+Ο στόχος της εργασίας είναι να γραφεί μία διαφορετική “τρίλιζα”,
+ όπου οι 2 παίκτες παίζονται από χρήστες. Ο κάθε παίκτης έχει 6 κομμάτια διαφορετικού μεγέθους (2 μικρά, 2 μεσαία και 2 μεγάλα)
+ και μπορεί να καλύψει κομμάτια δικά του ή του αντιπάλου για να κάνει τρίλιζα. Το παιχνίδι τελειώνει όταν δεν μπορεί να παιχτεί άλλο κομμάτι.
+ Δείτε το video (https://www.youtube.com/watch?v=HxF_vnr34i8) για το πως παίζεται το πλήρες παιχνίδι.'''
+
+board = [0,1,2,3,4,5,6,7,8]
+
+def show() :
+ print board[0], '|',board[1],'|',board[2] 
+ print '--------'
+ print board[3], '|',board[4],'|',board[5]
+ print '--------'
+ print board[6], '|',board[7],'|',board[8]
+ 
+pioni1big=2
+pioni1medium=2
+pioni1small=2
+pioni2big=2
+pioni2medium=2
+pioni2small=2
+pioni1="q"
+pioni2="w"
+found="false"
+y=0
+x=0
+
+ 
+ 
+print "o prwtos paixths paizei em ta pionia O o ." 
+
+while (found == "false") : 
+ if (  pioni1big == 0  and  pioni1medium == 0  and  pioni1small == 0  and  pioni2big == 0  and  pioni2medium == 0  and  pioni2small == 0  ) :
+ 
+     break 
+ 
+ 
+ 
+     
+  
+        
+		
+          
+	 
+	 
+	 
+	 
+ else :
+	 
+
+ 
+  print "paizei o prwtos paixths "
+ 
+  print "poio pioni thes na paikseis? "
+
+
+
+  pioni1=raw_input()
+  
+  
+  
+
+  
+  
+  while ( ( pioni1 == "O" ) and   ( pioni1big==0 ) ) or ( ( pioni1=="o" ) and (pioni1medium ==0) ) or ( ( pioni1== "." ) and (pioni1small==0 ) )  :
+   
+    print "den mporeis  na xreisimopoihseis alla,ksanabale antikeimeno "
+	  
+    pioni1 = raw_input() 
+   
+	  
+	  
+  
+  
+  print "se poia thesh thes na to paiksei?"
+
+  thesh=raw_input()  
+	  
+	  
+	  
+	  
+   
+          
+		 
+  	
+	
+  
+
+	 
+  if ( pioni1 == "O" )  : 
+  
+  
+    while ( board[int(thesh)]== "O" ) or (  board[int(thesh)]==" X " ) :
+	  
+  
+     print "den mporei na topotheththei edw, ksanadwse thesh"
+	    
+		  
+     thesh=raw_input()
+	   
+	 
+    pioni1big= pioni1big - 1
+	
+    
+	 
+    board[int(thesh)]=pioni1
+	
+	
+ 
+	 
+	 
+  
+  if (pioni1=="o")	   :
+   
+    while ( board[int(thesh)]== "O" ) or  ( board[int(thesh)]=="X" ) or ( board[int(thesh)]=="o" ) or ( board[int(thesh)]=="x" ) :
+   
+     print "den mporei na topotheththei edw "
+	  
+     thesh=raw_input()
+	 
+	
+    pioni1medium  = pioni1medium - 1	
+	
+    board[int(thesh)]=pioni1	  
+	
+
+  
+  
+  
+  if ( pioni1=="." )  :
+ 
+    while  ( board[int(thesh)]=="O" ) or ( board[int(thesh)]=="X" ) or ( board[int(thesh)]=="o") or  ( board[int(thesh)]=="x" ) or ( board[int(thesh)]=="." )  or ( board[int(thesh)]=="," ) :
+      print "den mporeis na to topothethseis ekei" 
+	
+      thesh=raw_input()
+	  
+    pioni1small = pioni1small -1
+   
+    board[int(thesh)]=pioni1
+   
+
+ 
+  show()
+   
+  
+  
+  
+  
+  for i in range (0,9,3) :
+      
+      if ( ( board[i]== "O" or board[i]== "o" or board[i]== "." ) and ( board[i+1]== "O" or board[i+1]== "o" or board[i+1]== "."  ) and ( board[i+2]== "O" or board[i+2]== "o" or board[i+2]== ".") )  :
+  
+                    
+	   
+					
+	   y = 5
+ 
+  for i in range (0,3) :
+   
+      if  ( ( board[i]== "O" or board[i]== "o" or board[i]== "." ) and ( board[i+3]== "O" or board[i+3]== "o" or board[i+3]== "."  ) and ( board[i+6]== "O" or board[i+6]== "o" or board[i+6]== ".") )  :
+      
+	  
+       y = 5
+	   
+  for i in range (0,2,2) :
+  
+      
+	  if  ( ( board[i]== "O" or board[i]== "o" or board[i]== "." ) and ( board[i+4]== "O" or board[i+4]== "o" or board[i+4]== "."  ) and ( board[i+8]== "O" or board[i+8]== "o" or board[i+8]== ".") )  :
+
+	  
+	   y=5
+        
+  
+  for i in range (2,4,2) :
+  
+        
+      if  ( ( board[i]== "O" or board[i]== "o" or board[i]== "." ) and ( board[i+2]== "O" or board[i+2]== "o" or board[i+2]== "."  ) and ( board[i+4]== "O" or board[i+4]== "o" or board[i+4]== ".") )  :
+
+	     y=5 
+     
+    
+	   
+  	   
+		
+  
+  if ( y == 5 )  :
+   
+   
+   print "kerdise o prwtos paixths"
+   
+   break
+   
+  else : 
+ 
+   print "paizei o deyteros paixths "
+ 
+   print "poio pioni thes na paikseis? "
+
+
+
+   pioni2=raw_input()
+   
+   
+   while ( ( pioni2 == "X" ) and   ( pioni2big==0 ) ) or ( ( pioni2=="x" ) and (pioni2medium ==0) ) or ( ( pioni2== "," ) and (pioni2small==0 ) )  :
+   
+    print "den mporeis  na xreisimopoihseis alla,ksanabale antikeimeno "
+	  
+    pioni2 = raw_input()
+
+   print "se poia thesh thes na to paiksei?"
+
+   thesh=raw_input()
+	 
+   if (pioni2=="X") : 
+  
+    while ( board[int(thesh)]== "O" ) or (  board[int(thesh)]==" X " ) :
+  
+      print "den mporei na topotheththei edw"
+	
+      thesh=raw_input()
+	 
+    pioni2big= pioni2big - 1
+	 
+    board[int(thesh)]=pioni2
+  
+  
+   elif (pioni2=="x")	   :
+   
+    
+     while ( board[int(thesh)]== "O" ) or  ( board[int(thesh)]=="X" ) or ( board[int(thesh)]=="o" ) or ( board[int(thesh)]=="x" ) :
+   
+          print "den mporei na topotheththei edw "
+	  
+          thesh=raw_input()
+	
+     pioni2medium  = pioni2medium - 1	
+	
+     board[int(thesh)]=pioni2	  
+	  
+   else  :
+   
+ 
+      while  ( board[int(thesh)]=="O" ) or ( board[int(thesh)]=="X" ) or ( board[int(thesh)]=="o") or  ( board[int(thesh)]=="x" ) or ( board[int(thesh)]=="." )  or ( board[int(thesh)]=="," ) :
+	  
+        print "den mporeis na to topothethseis ekei" 
+		
+	
+        thesh=raw_input()
+	  
+      pioni2small = pioni2small - 1
+   
+      board[int(thesh)]=pioni2
+
+
+
+ 
+
+
+  
+  for i in range (0,9,3) :
+      
+      if ( ( board[i]== "X" or board[i]== "x" or board[i]== "," ) and ( board[i+1]== "X" or board[i+1]== "x" or board[i+1]== ","  ) and ( board[i+2]== "X" or board[i+2]== "x" or board[i+2]== ",") )  :
+  
+                    
+	   
+					
+	   x = 5
+ 
+  for i in range (0,3) :
+   
+      if  ( ( board[i]== "X" or board[i]== "x" or board[i]== "," ) and ( board[i+3]== "X" or board[i+3]== "x" or board[i+3]== ","  ) and ( board[i+6]== "X" or board[i+6]== "x" or board[i+6]== ",") )  :
+      
+	  
+       x = 5
+	   
+  for i in range (0,2,2) :
+  
+      
+	  if  ( ( board[i]== "X" or board[i]== "x" or board[i]== "," ) and ( board[i+4]== "X" or board[i+4]== "x" or board[i+4]== ","  ) and ( board[i+8]== "X" or board[i+8]== "x" or board[i+8]== ",") )  :
+
+	  
+	   x=5
+        
+  
+  for i in range (2,4,2) :
+  
+        
+      if  ( ( board[i]== "X" or board[i]== "x" or board[i]== "," ) and ( board[i+2]== "X" or board[i+2]== "x" or board[i+2]== ","  ) and ( board[i+4]== "X" or board[i+4]== "x" or board[i+4]== ",") )  :
+
+	     x=5 
+     
+    
+	   
+  	   
+		
+  
+  if ( x == 5 )  :
+   
+   
+   print "kerdise o deyteros  paixths"
+   
+   show()
+   
+   break
+  
+
+  else :
+
+  
+
+
+   show()
+
+
+
+
+print "telos paixnidiou"	 
