@@ -27,7 +27,7 @@ x=0
 
  
  
-print "o prwtos paixths paizei em ta pionia O o ." 
+print "o prwtos paixths paizei em ta pionia O o . και ο δευτερος με Χ χ ," 
 
 while (found == "false") : 
  if (  pioni1big == 0  and  pioni1medium == 0  and  pioni1small == 0  and  pioni2big == 0  and  pioni2medium == 0  and  pioni2small == 0  ) :
