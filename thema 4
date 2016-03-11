@@ -1,0 +1,41 @@
+for i in range (0,19) :
+    
+	
+	
+ x=random.randrange (1,1025)
+ y=random.randrange(1,1025)
+ r=random.randrange(10,501)
+ kuklosx.append(x)
+ kuklosy.append(y)
+ kuklosr.append(r)
+ draw=ImageDraw.Draw(im)
+ draw.ellipse((x-r, y-r, x+r, y+r), fill=(255,255,0), outline ='red')
+
+
+k=0
+d=0
+
+while(d<20) :
+
+   a=kuklosx[d]	
+   b=kuklosy[d]
+	
+   ray1=kuklosr[d]
+	
+	
+   for e in range (d,20) :   
+   
+	f=kuklosx[e]
+		
+	g=kuklosy[e]
+		
+	ray2=kuklosr[e]
+	ul=( ( a-f ) ** 2)+( ( b-g ) ** 2 ) ** 0.5
+	
+	
+	if ul<=(ray1+ray2) :	
+		     k=k+1
+   
+print k		
+	     
+im.show()
