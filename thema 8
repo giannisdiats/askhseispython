@@ -1,0 +1,65 @@
+Γράψτε έναν κώδικα ο οποίος θα διαβάζει από ένα αρχείο ένα πίνακα 8x8 ο οποίος αποτελείται από κενά (space) και 0.
+ Στην συνέχεια θα εμφανίζει τις 3 περιστροφές που μπορεί να έχει αυτός ο πίνακας κατά 90 μοίρες. Σκεφτείτε την περιστροφή ενός custom τούβλου στο Tetris.'''
+
+import random
+
+
+def RotateBoard(board, n):
+    i = 0
+    while i < n:
+        j = 0
+        while j < n:
+            rotatedBoard[i][j] = board[n - j - 1][i]
+            j += 1
+        i += 1
+    return rotatedBoard
+
+
+
+def PrintBoard(board, n):
+    i = 0
+    while i < n:
+        j = 0
+        while j < n:
+            print board[i][j]
+            j += 1
+        print " "
+        i += 1
+
+
+
+def InitializeBoard(symbols, n):
+	board = [],[]
+	
+	for i in range(0,(n-1)):
+		for j in range(0,(n-1)):
+				randomIndex = random.randint(0,1)		
+				board[i][j] = symbols[randomIndex]
+		
+	return board
+
+
+	
+	
+symbols = ["x","0"]
+print symbols[0]
+
+print "Dwste megethos pinaka [NxN]: "
+boardLength = int(raw_input())
+ 
+print "Dwste plithos peristrofwn: "
+rotationCount = int(raw_input())
+
+print "\n\n"
+board = InitializeBoard(symbols, boardLength)
+i = 0
+
+while i < rotationCount:
+    print "#" + (i + 1) + " Peristrofi\n"
+    PrintBoard(board, boardLength)
+    print "\n\n"
+    board = RotateBoard(board, boardLength)
+    i += 1
+ 
+
+    
